@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    学习promise
+    <script src="./promise.js"></script>
+    <script>
+        //实现构造函数和then
+        // const p=new ManualPromise((resolve,reject) => {
+        //         reject(2)//异步执行                
+        // }).then(
+        //     value=>{
+        //         console.log('onResolve1',value)
+        //         return 644565
+        //     },
+        //     reason=>{
+        //         console.log('onReject1',reason)
+        //            throw 666
+        //     }
+        // ).catch(err=>{
+        //     console.log('error',err)
+        // })
+
+    //实现ManualPromise.resolve和ManualPromise.reject
+    // p1=ManualPromise.resolve(222)
+    // p1.then(value=>console.log(value))
+    // p2=ManualPromise.resolve(ManualPromise.resolve(333))
+
+    // p2.then(value=>console.log('resolve',value))
+    // p3=ManualPromise.reject(444)
+
+    // p3.catch(value=>console.log(value))
+    // p4=ManualPromise.resolve(ManualPromise.reject(555))
+    // p4.then(value=>console.log(value),
+    // resaon=>console.log('reject',resaon))
+
+    // 实现ManualPromise.all
+    // 等到全部执行完后才能才返回，如果遇到reject直接返回，如果全是resolve，执行完才返回
+    // 扩展了传入[]方法
+    //[]里支持任何数据
+    // const pAll=ManualPromise.all([ManualPromise.resolve(222),ManualPromise.reject(222)])
+    // console.log(111,pAll)
+    // pAll.then(value=>console.log('resolve',value),
+    // resaon=>console.log('reject',resaon))
+
+    //实现ManualPromise.race
+    // 扩展了传入[]方法
+    //[]里支持任何数据
+    const pRace=ManualPromise.race([{name:"looper"},ManualPromise.resolve(222),ManualPromise.reject(222)])
+    console.log(111,pRace)
+    pRace.then(value=>console.log('resolve',value),
+    resaon=>console.log('reject',resaon))
+    </script>
+</body>
+</html>
