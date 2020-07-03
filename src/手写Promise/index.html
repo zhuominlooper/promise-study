@@ -7,7 +7,7 @@
 </head>
 <body>
     学习promise
-    <script src="./promise.js"></script>
+    <script src="./promise_class.ts"></script>
     <script>
         //实现构造函数和then
         // const p=new ManualPromise((resolve,reject) => {
@@ -50,10 +50,12 @@
     //实现ManualPromise.race
     // 扩展了传入[]方法
     //[]里支持任何数据
-    const pRace=ManualPromise.race([{name:"looper"},ManualPromise.resolve(222),ManualPromise.reject(222)])
-    console.log(111,pRace)
-    pRace.then(value=>console.log('resolve',value),
-    resaon=>console.log('reject',resaon))
+      
+    
+    // const pRace=ManualPromise.race([{name:"looper"},ManualPromise.resolve(222),ManualPromise.reject(222)])
+    // console.log(111,pRace)
+    // pRace.then(value=>console.log('resolve',value),
+    // resaon=>console.log('reject',resaon))
     </script>
 </body>
 </html>
